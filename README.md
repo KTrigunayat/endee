@@ -349,6 +349,55 @@ We welcome contributions from the community to help make vector search faster an
 
 ---
 
+## Event-Ops AI Agentic RAG Integration
+
+This fork includes **Event-Ops AI Agentic RAG**, a specialized application that uses Endee as its vector database for event management and decision support.
+
+### About Event-Ops AI
+
+Event-Ops AI is an Agentic RAG system designed to bridge communication gaps between vendors and on-ground event teams. It indexes event-brief documents into Endee vector store and provides real-time decision support, solves logistical issues, and suggests actionable plans based on ground realities.
+
+### Key Features
+
+* **Document Ingestion**: Parse and index PDF, DOCX, TXT files
+* **Semantic Chunking**: Event-specific categorization (Vendor Info, Timeline, Crisis Protocol)
+* **Advanced Embeddings**: OpenAI/Gemini embeddings with fallback options
+* **Agentic Reasoning**: Gemini 1.5 Flash for complex decision-making
+* **Action Tools**: Vendor contact, pivot planning, staff coordination
+* **Real-time Search**: Context-aware document retrieval
+
+### Running Event-Ops with Endee Server
+
+To run Event-Ops with this Endee server:
+
+1. **Start the Endee Server** (using any method from above):
+   ```bash
+   # Quick method using run.sh
+   ./run.sh
+   ```
+
+2. **Configure Event-Ops**:
+   - Set `ENDEE_SERVER_URL=http://localhost:8080` in Event-Ops `.env` file
+   - Configure other Endee settings as needed (auth token, index name, etc.)
+
+3. **Run Event-Ops**:
+   ```bash
+   # Navigate to Event-Ops directory
+   cd Event-Ops-AI-Agentic-RAG
+   
+   # Install dependencies
+   pip install -r requirements.txt
+   
+   # Run the application
+   streamlit run app.py
+   ```
+
+### Detailed Instructions
+
+For complete setup and configuration instructions, see the [Event-Ops README](Event-Ops-AI-Agentic-RAG/README.md).
+
+---
+
 ## License
 
 Endee is open source software licensed under the
